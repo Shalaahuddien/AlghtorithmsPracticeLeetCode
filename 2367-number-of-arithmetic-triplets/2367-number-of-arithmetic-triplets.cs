@@ -1,13 +1,13 @@
 public class Solution {
     public int ArithmeticTriplets(int[] nums, int diff) {
-        HashSet<int> nums2 = new HashSet<int>(nums);
         int n = nums.Length;
+        List<int> numbers = nums.ToList();
         int res=0;
-        for(int i=0;i<n;i++){
-            if(nums2.Contains(nums[i]+diff) && nums2.Contains(nums[i]-diff))
-                res+=1;
+        for(int i=1;i<n-1;i++){
+           if(numbers.Contains(nums[i]+diff) && numbers.Contains(nums[i]-diff)){
+               res+=1;
+           }
         }
         return res;
-        
     }
 }
