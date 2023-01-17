@@ -1,15 +1,20 @@
 public class Solution {
-    public string FirstPalindrome(string[] words) {
-        foreach(string s in words)
-            if(isPalindomic(s))
-                return s;
-        return "";
-    }
-    bool isPalindomic(string s){
-        int n =s.Length;
-        for(int i=0;i<(1+n)/2;i++){
-            if(s[i] != s[n-i-1]) return false;
-        }
-        return true;
+public string FirstPalindrome(string[] words) {
+         string pal = "";
+            string elemet = "";
+            for (int i = 0; i < words.Length; i++)
+            {
+                for (int z = words[i].Length-1; z>=0; z--)
+                {
+                    elemet = words[i];
+                    pal += elemet[z];
+                }
+                if (pal == words[i])
+                {
+                    return pal;
+                }
+                pal = "";
+            }
+            return "";
     }
 }
