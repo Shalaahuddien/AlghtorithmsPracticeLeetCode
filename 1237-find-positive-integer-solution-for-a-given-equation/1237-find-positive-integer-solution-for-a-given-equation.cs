@@ -13,10 +13,27 @@ public class Solution {
     public IList<IList<int>> FindSolution(CustomFunction customfunction, int z) {
         IList<IList<int>> res = new List<IList<int>>();
         for(int x=1;x<=1000;x++){
-            for(int y=1;y<=1000;y++){
-                if(customfunction.f(x,y) == z)
-                    res.Add(new List<int>(){x,y});
+            int l =1;
+            int r=1000;
+            Console.WriteLine($"x = {x}");
+            while(l<=r){
+                int mid = (l+r)/2;
+                Console.WriteLine($"L = {l}, R = {r} ,Mid = {mid}");
+                List<int> pair = new List<int>(){x,mid};
+                int funcRes = customfunction.f(x,mid);
+                if(funcRes==z){
+                    res.Add(pair);
+                    Console.WriteLine($"pair res = {x},{mid}");
+                    break;
+                }
+                else if (funcRes>z){
+                    r = mid-1;
+                }
+                else {
+                    l = mid+1;
+                }
             }
+
         }
         return res;
     }
