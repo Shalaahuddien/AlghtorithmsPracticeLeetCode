@@ -15,15 +15,15 @@ public class Solution {
         for(int x=1;x<=1000;x++){
             int l =1;
             int r=1000;
-            Console.WriteLine($"x = {x}");
+            //Console.WriteLine($"x = {x}");
             while(l<=r){
                 int mid = (l+r)/2;
-                Console.WriteLine($"L = {l}, R = {r} ,Mid = {mid}");
+               // Console.WriteLine($"L = {l}, R = {r} ,Mid = {mid}");
                 List<int> pair = new List<int>(){x,mid};
                 int funcRes = customfunction.f(x,mid);
                 if(funcRes==z){
                     res.Add(pair);
-                    Console.WriteLine($"pair res = {x},{mid}");
+                   // Console.WriteLine($"pair res = {x},{mid}");
                     break;
                 }
                 else if (funcRes>z){
