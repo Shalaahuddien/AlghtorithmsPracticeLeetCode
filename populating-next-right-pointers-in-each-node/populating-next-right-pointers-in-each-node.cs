@@ -24,7 +24,6 @@ public class Node {
 public class Solution {
     public Node Connect(Node root) {
         TreeTravers(root);
-        NullRight(root);
         return root;
     }
     public void TreeTravers(Node root){
@@ -46,9 +45,5 @@ public class Solution {
         left.next = right;
         LeftToRigth(left.right,right.left);
     }
-    public void NullRight(Node root){
-        if (root==null) return;
-        root.next = null;
-        NullRight(root.right);
-    }
+
 }
