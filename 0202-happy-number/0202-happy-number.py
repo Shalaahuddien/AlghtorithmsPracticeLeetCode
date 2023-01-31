@@ -7,11 +7,11 @@ class Solution:
                 x=x//10
                 res += digit*digit
             return res
-        oldNumbers =[]
+        oldNumbers =set([])
         nowNumber = convert(n)
         while(nowNumber!=1):
             if ( nowNumber in oldNumbers):
                 return False
-            oldNumbers.append(nowNumber)
+            oldNumbers.add(nowNumber)
             nowNumber = convert(nowNumber)
         return True;
